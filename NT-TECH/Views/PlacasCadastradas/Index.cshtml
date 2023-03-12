@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NT_TECH.Models.Veiculos.PlacasCadastradas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlacasCadastrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChavesAtivas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NaoAtivas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlacasCadastrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChavesAtivas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NaoAtivas)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

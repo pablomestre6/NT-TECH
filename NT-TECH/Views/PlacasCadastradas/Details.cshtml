@@ -1,0 +1,36 @@
+﻿@model NT_TECH.Models.Veiculos.PlacasCadastradas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PlacasCadastradas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlacasCadastrada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlacasCadastrada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChavesAtivas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChavesAtivas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NaoAtivas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NaoAtivas)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

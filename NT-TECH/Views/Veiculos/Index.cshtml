@@ -1,0 +1,49 @@
+﻿@model IEnumerable<NT_TECH.Models.Veiculos.Veiculos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Registro Veícular</h1>
+<br />
+    <br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Novo Registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlacadoVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelodoVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlacadoVeiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelodoVeiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Excluir</a>  
+                    |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
